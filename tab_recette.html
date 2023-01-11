@@ -1,0 +1,26 @@
+{% extends './pages/betails/service.html' %}
+{% block table %}
+<table class="table table-striped table-bordered" id="bootstrap-data-table-export">
+    <thead>
+    <tr>
+        <th>Date</th>
+        <th>Plan Comptable</th>
+        <th>Montant en Chiffre</th>
+        <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>17/12/2022</td>
+        <td>System Architect</td>
+        <td>$320,800</td>
+        <td>
+            <a class="icon-voir" href="#"><i class="fa fa-eye"></i></a>
+            <a class="icon-editer" href="#"><i class="fa fa-edit" class="editer"></i></a>
+            <a class="icon-poubelle" href="#"><i class="fa fa-trash-o"></i></a>
+        </td>
+    </tr>
+
+    </tbody>
+</table>
+{% endblock %}

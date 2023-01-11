@@ -1,0 +1,23 @@
+{% extends 'index.html' %}
+{% block content %}
+<form action="" method="POST">
+    <div class="form-group">
+        <label class="control-label" for="plan_compta">Plan comptable</label>
+        <input class="form-control" id="plan_compta"
+               name="plan_compta" type="number" value="{{recette.plan_compta}}">
+    </div>
+
+    <div class="form-group">
+        <label class="control-label" for="montant">Montant en chiffre</label>
+        <input class="form-control" id="montant" name="montant" type="number" value="{{recette.montant}}">
+    </div>
+
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <input class="btn btn-success me-md-2 mr-5 rounded" type="submit">
+               <a href="{{url_for('tab_afficher_recette_loyer')}}">
+        <button class="btn btn-danger mr-5 rounded" type="submit">Annuler</button>
+        </a>
+
+    </div>
+</form>
+{% endblock %}

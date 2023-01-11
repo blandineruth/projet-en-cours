@@ -1,0 +1,130 @@
+
+{% extends 'index.html' %}
+{% block  content %}
+
+<!-- CSS only -->
+
+<!--under nav-->
+<div class="breadcrumbs  ">
+    <div class="col-sm-5 mt-3">
+        <div class="page-header float-right">
+
+            <a href="">
+                <button class="btn btn-primary rounded" type="button">Recette</button>
+            </a>
+
+        </div>
+    </div>
+
+
+    <div class="col-sm-2 mt-3">
+        <div class="page-header float-right">
+            <a href="{{url_for('tab_afficher_depense')}}">
+                <button class="btn btn-secondary rounded" type="button">Depenses</button>
+            </a>
+
+        </div>
+    </div>
+</div>
+<!--under nav-->
+<h3>Vous êtes sur : {{ request.path }}</h3>
+
+<div class="container m-3 d-flex justify-content-between" id="right-panel">
+    <div class="row m-1 p-3 border border-dark col-3">
+        <div class="row m-1">
+            <h3 class="d-block">Solde :</h3>
+            <!--Lorsqu'on aura des elements dans la base de donnée, le solde sera remplacé par solde de chaque section-->
+            <h3 class="d-block">120 000 cfa</h3>
+        </div>
+    </div>
+
+    <!--boutton ajouter-->
+    <div class="">
+        <a href="{{url_for('form_ajout_depense_betails')}}">
+            <button class="btn btn-success m-1 p-3 rounded" type="button">+ Ajouter</button>
+        </a>
+    </div>
+
+    <!--boutton ajouter-->
+</div>
+
+
+<div class="row">
+    <div class="col-md-12 ">
+        <div class="card ">
+            <div class="card-header ">
+
+                <div class="col-md-4">
+                    <label for="inputState" class="form-label">Imprimer</label>
+                    <select id="inputState" class="form-select">
+                        <option selected>Pdf</option>
+                        <option>Excel</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="card-body ">
+
+            <!--Table-->
+            {% block table %}
+            <table class="table table-striped table-bordered" id="bootstrap-data-table-export">
+                <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Plan Comptable</th>
+                    <th>Montant en Chiffre</th>
+                    <th>Action</th>
+                </tr>
+                </thead>
+                {% for recette in recette %}
+                <tbody>
+                <tr>
+                    <td>17/12/2022</td>
+                    <td>{{ recette.plan_compta}}</td>
+                    <td>{{ recette.montant}}</td>
+
+                    <td>
+                        <a class="icon-trash" href="{{ url_for('delete_recette_betails', id=recette.id) }}" onclick="return confirm('Êtes vous de vouloir supprimer  ?')"><i class="fa fa-trash"></i></a>
+                        <a class="icon-editer" href="{{ url_for('modifier_recette_betails', recette_id=recette.id) }}"> <i class="fa fa-edit"></i></a>
+                    </td>
+
+
+                </tr>
+
+                </tbody>
+                {% endfor %}
+            </table>
+
+            {% endblock %}
+            <!--Fin Table-->
+
+
+        </div>
+    </div>
+</div>
+
+<!--Script data table-->
+<script src="./static/vendors/jquery/dist/jquery.min.js"></script>
+<script src="./static/vendors/popper.js/dist/umd/popper.min.js"></script>
+<script src="./static/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="./static/assets/js/main.js"></script>
+
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+<script src="./static/vendors/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="./static/vendors/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
+<script src="./static/vendors/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+<script src="./static/vendors/datatables.net-buttons-bs4/js/buttons.bootstrap4.min.js"></script>
+<script src="./static/vendors/jszip/dist/jszip.min.js"></script>
+<script src="./static/vendors/pdfmake/build/pdfmake.min.js"></script>
+<script src="./static/vendors/pdfmake/build/vfs_fonts.js"></script>
+<script src="./static/vendors/datatables.net-buttons/js/buttons.html5.min.js"></script>
+<script src="./static/vendors/datatables.net-buttons/js/buttons.print.min.js"></script>
+<script src="./static/vendors/datatables.net-buttons/js/buttons.colVis.min.js"></script>
+<script src="./static/assets/js/init-scripts/data-table/datatables-init.js"></script>
+</div>
+
+
+{% endblock %}

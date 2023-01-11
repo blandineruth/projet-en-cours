@@ -1,0 +1,101 @@
+
+{% extends 'index.html' %}
+
+{% block content %}
+<div class="" id="right-panel"><!--right-panel-->
+
+
+    <!--under nav-->
+<div class="breadcrumbs  ">
+    <div class="col-sm-5 mt-3">
+        <div class="page-header float-right">
+
+            <a href="{{url_for('form_ajout_recette_loyer')}}"><button class="btn btn-secondary rounded" type="button">Recettes</button></a>
+
+        </div>
+    </div>
+
+
+    <div class="col-sm-2 mt-3">
+        <div class="page-header float-right">
+            <a href="{{url_for('form_ajout_depense_loyer')}}"><button class="btn btn-primary rounded" type="button">Depenses</button></a>
+
+        </div>
+    </div>
+</div>
+
+    <!--under nav-->
+
+{% block form %}
+<div class="col-lg-10 mt-3  ml-5">
+    <div class="card ml-5">
+        <div class="card-header">
+            <strong class="card-title">Ajout d'une dépense</strong>
+        </div>
+        <div class="card-body">
+            <!-- Credit Card -->
+            <div id="pay-invoice">
+                <div class="card-body">
+
+                    <form action="{{url_for('form_ajout_depense_loyer')}}" method="POST" >
+
+                        <div class="form-group">
+                            <label class="control-label" for="plan_compta">Plan comptable</label>
+                            <input aria-invalid="false" aria-required="true" class="form-control" id="plan_compta"
+                                   name="plan_compta" type="number" required>
+                        </div>
+                        <div class="form-group has-success">
+                            <label class="control-label" for="beneficiaire">Bénéficiaire</label>
+                            <input aria-describedby="cc-name-error" aria-invalid="false" aria-required="true"
+                                   autocomplete="cc-name" class="form-control"
+                                   data-val="true" data-val-required="Please enter the name on card"
+                                   id="beneficiaire" name="beneficiaire" type="text" required >
+
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" for="montant">Montant en chiffre</label>
+                            <input autocomplete="cc-number" class="form-control" data-val="true"
+                                   data-val-cc-number="Please enter a valid card number"
+                                   data-val-required="Please enter the card number" id="montant" name="montant"
+                                   type="number" value="" required>
+
+                        </div>
+                        <div class="form-group has-success">
+                            <label class="control-label" for="motif">Motif</label>
+                            <input aria-describedby="cc-name-error" aria-invalid="false" aria-required="true"
+                                   autocomplete="cc-name" class="form-control "
+                                   data-val="true" data-val-required="Please enter the name on card"
+                                   id="motif" name="motif" type="text" required>
+
+                        </div>
+
+                         <div>
+
+                            <input  type="hidden" value="loyer" name="service" required>
+
+                        </div>
+
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+
+                                <button class="btn btn-success me-md-2 mr-5 rounded" type="submit">Enregistrer</button>
+
+
+                            <a href="{{url_for('home')}}">
+                                <button class="btn btn-danger mr-5 rounded" type="submit">Annuler</button>
+                            </a>
+                        </div>
+
+
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div> <!-- .card -->
+
+</div>
+{% endblock %}
+
+
+</div>
+{% endblock %}

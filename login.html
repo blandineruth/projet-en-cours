@@ -1,0 +1,63 @@
+{% extends 'index.html' %}
+{% block  content %}
+<div class="row justify-content-center">
+
+            <div class="col-xl-10 col-lg-12 col-md-9">
+
+                <div class="card o-hidden border-0 shadow-lg my-5">
+                    <div class="card-body p-0">
+                        <!-- Nested Row within Card Body -->
+                        <div class="row">
+                            <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
+                            <div class="col-lg-6">
+                                <div class="p-5">
+                                    <div class="text-center">
+                                        <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
+                                    </div>
+                                    <form class="user" action="" method="POST">
+                                          {{ form.csrf_token }}
+                                        <div class="form-group">
+                                          {{ form.identifiant}}
+                                        </div>
+                                        <div class="form-group">
+                                           {{ form.password}}
+                                        </div>
+                                        <div class="form-group">
+                                         {{ form.submit}}
+                                        </div>
+
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+
+
+     <script src="./static/vendors/jquery/dist/jquery.min.js"></script>
+    <script src="./static/vendors/popper.js/dist/umd/popper.min.js"></script>
+    <script src="./static/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="./static/assets/js/main.js"></script>
+
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <script src="./static/vendors/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="./static/vendors/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
+    <script src="./static/vendors/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+    <script src="./static/vendors/datatables.net-buttons-bs4/js/buttons.bootstrap4.min.js"></script>
+    <script src="./static/vendors/jszip/dist/jszip.min.js"></script>
+    <script src="./static/vendors/pdfmake/build/pdfmake.min.js"></script>
+    <script src="./static/vendors/pdfmake/build/vfs_fonts.js"></script>
+    <script src="./static/vendors/datatables.net-buttons/js/buttons.html5.min.js"></script>
+    <script src="./static/vendors/datatables.net-buttons/js/buttons.print.min.js"></script>
+    <script src="./static/vendors/datatables.net-buttons/js/buttons.colVis.min.js"></script>
+    <script src="./static/assets/js/init-scripts/data-table/datatables-init.js"></script>
+</div>
+ {% endblock %}

@@ -1,0 +1,47 @@
+<!-- Left Panel -->
+
+<aside class="left-panel bg-dark text-white" id="left-panel">
+
+    <nav class="navbar navbar-expand-sm navbar-default bg-dark text-white">
+
+        <div class="navbar-header">
+
+            <a class="navbar-brand" href="./"> AFAM &nbsp  <img alt="Logo" src="static/images/logoAFAM.jpg" width="50px"></a>
+            <a class="navbar-brand hidden" href="./"><img alt="Logo" src="static/images/logo2.png"></a>
+        </div>
+
+
+        <div aria-orientation="vertical" class="nav flex-column nav-pills" role="tablist">
+            <a aria-controls="v-pills-home" aria-selected="false" class="nav-link active bg-nav-link d-flex"
+               data-toggle=""
+               href="#"
+               role="tab">
+                <h3>Dashbord</h3>
+
+            </a>
+            <a aria-controls="v-pills-abattage" aria-selected="true" class="nav-link  bg-nav-link d-flex" data-toggle=""
+               href="{{url_for('tab_afficher_depense_abattage')}}"
+                role="tab">
+                <i class="fa fa-sitemap"></i>
+                  &nbsp Abattage
+            </a>
+            <a aria-controls="v-pills-profile" aria-selected="false" class="nav-link bg-nav-link" data-toggle=""
+               href="{{url_for('tab_afficher_depense')}}"
+               role="tab">
+                <i class="fa fa-leaf"></i>
+               &nbsp Bétails</a>
+            <a aria-controls="v-pills-messages" aria-selected="false" class="nav-link bg-nav-link" data-toggle=""
+               href="{{url_for('tab_afficher_depense_loyer')}}"
+               role="tab">
+                <i class="fa fa-key"></i>
+                &nbsp Loyer
+            </a>
+            <a aria-controls="v-pills-settings" aria-selected="false" class="nav-link bg-nav-link" data-toggle=""
+               href=""
+               id="" role="tab">
+                 <i class="fa fa-tags"></i>
+                &nbsp Générale</a>
+
+        </div>
+    </nav>
+</aside><!-- /#left-panel -->
